@@ -3,10 +3,8 @@ import { spawn } from "child_process";
 
 const router = express.Router({ mergeParams: true });
 
-const pythonScriptPathForSymptoms =
-  "C:\\Users\\Gautam Kumar Yadav\\Desktop\\tkinterpj\\Effective-medical-assistant\\EffectiveMedicalAssistant\\backend\\symptoms.py";
-const symptomsModel =
-  "C:\\Users\\Gautam Kumar Yadav\\Desktop\\tkinterpj\\Effective-medical-assistant\\EffectiveMedicalAssistant\\backend\\aimodels\\svc.pkl";
+const pythonScriptPathForSymptoms = "E:\\Projects\\EMA\\Effective-medical-assistant\\backend\\symptoms.py";
+const symptomsModel = "E:\\Projects\\EMA\\Effective-medical-assistant\\backend\\aimodels\\svc.pkl";
 
 router.post("/symptoms", (req, res) => {
   let responseSent = false;

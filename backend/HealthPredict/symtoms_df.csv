@@ -379,16 +379,7 @@
 377,Acne, skin_rash, pus_filled_pimples, blackheads,
 378,Acne, skin_rash, pus_filled_pimples, scurring,
 379,Acne, skin_rash, blackheads, scurring,
-380,Urinary tract infection, burning_micturition, bladder_discomfort, foul_smell_of urine, continuous_feel_of_urine
-381,Urinary tract infection, burning_micturition, bladder_discomfort, foul_smell_of urine, continuous_feel_of_urine
-382,Urinary tract infection, bladder_discomfort, foul_smell_of urine, continuous_feel_of_urine,
-383,Urinary tract infection, burning_micturition, foul_smell_of urine, continuous_feel_of_urine,
-384,Urinary tract infection, burning_micturition, bladder_discomfort, continuous_feel_of_urine,
-385,Urinary tract infection, burning_micturition, bladder_discomfort, foul_smell_of urine,
-386,Urinary tract infection, burning_micturition, bladder_discomfort, foul_smell_of urine, continuous_feel_of_urine
-387,Urinary tract infection, burning_micturition, bladder_discomfort, continuous_feel_of_urine,
-388,Urinary tract infection, bladder_discomfort, foul_smell_of urine, continuous_feel_of_urine,
-389,Urinary tract infection, burning_micturition, bladder_discomfort, continuous_feel_of_urine,
+
 390,Psoriasis, skin_rash, joint_pain, skin_peeling, silver_like_dusting
 391,Psoriasis, skin_rash, joint_pain, skin_peeling, silver_like_dusting
 392,Psoriasis, joint_pain, skin_peeling, silver_like_dusting, small_dents_in_nails
