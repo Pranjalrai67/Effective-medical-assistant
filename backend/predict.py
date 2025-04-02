@@ -20,6 +20,13 @@ import json
 
 def load_model(disease):
     try:
+        if(disease == 'diabetes'):
+            model_path = f'./ai-models/{disease}/{disease}.pkl'
+            
+            with open(model_path, 'rb') as model_file:
+                model = pickle.load(model_file)
+            return model
+
         model_path = f'./ai-models/{disease}.pkl'
         with open(model_path, 'rb') as model_file:
             model = pickle.load(model_file)
@@ -32,6 +39,13 @@ def predict(disease, data):
     model = load_model(disease)
     if model:
         try:
+            if(disease == 'diabetes'):
+                data_array = np.array(data).reshape(1, -1)
+                with open(f"./ai-models/{disease}/scaler.pkl") as file:
+                        loaded_scaler = pickle.load(file)
+                scaled_data = loaded_scaler.transform(data_array)
+                prediction = model.predict(data_array)
+                return prediction.tolist()
             data_array = np.array(data).reshape(1, -1)
             prediction = model.predict(data_array)
             return prediction.tolist()
