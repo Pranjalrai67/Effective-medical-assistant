@@ -21,7 +21,7 @@ import json
 def load_model(disease):
     try:
         if(disease == 'diabetes'):
-            model_path = f'./ai-models/{disease}/{disease}.pkl'
+            model_path = r'E:\Projects\EMA\Effective-medical-assistant\backend\aimodels\diabetes\diabetes.pkl'
             
             with open(model_path, 'rb') as model_file:
                 model = pickle.load(model_file)
@@ -40,11 +40,13 @@ def predict(disease, data):
     if model:
         try:
             if(disease == 'diabetes'):
-                data_array = np.array(data).reshape(1, -1)
-                with open(f"./ai-models/{disease}/scaler.pkl") as file:
-                        loaded_scaler = pickle.load(file)
+                list_data = list(data.values())
+                data_array = np.array(list_data).reshape(1, -1)
+                with open(r"E:\Projects\EMA\Effective-medical-assistant\backend\aimodels\diabetes\scaler.pkl", "rb") as file:
+                    loaded_scaler = pickle.load(file)
+
                 scaled_data = loaded_scaler.transform(data_array)
-                prediction = model.predict(data_array)
+                prediction = model.predict(scaled_data)
                 return prediction.tolist()
             data_array = np.array(data).reshape(1, -1)
             prediction = model.predict(data_array)
@@ -54,13 +56,12 @@ def predict(disease, data):
     return None
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 4:
         print("Usage: python predict.py <disease> <input_data>")
         sys.exit(1)
-
-    disease = sys.argv[1]
-    input_data = sys.argv[2]
-
+    print("Sys argv [0]  : ",sys.argv[0])
+    disease = sys.argv[4]
+    input_data = sys.argv[3]
     prediction = predict(disease, json.loads(input_data))
     if prediction:
         print(json.dumps(prediction))

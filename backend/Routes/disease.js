@@ -5,12 +5,12 @@ import path from "path";
 
 const router = express.Router();
 
-const diabetesModel = "E:\\Projects\\EMA\\Effective-medical-assistant\\backend\\aimodels\\diabetes\\diabetes_model.pkl";
+const diabetesModel = "E:\\Projects\\EMA\\Effective-medical-assistant\\backend\\aimodels\\diabetes\\diabetes.pkl";
 const heartModel = "C:\\Users\\Gautam Kumar Yadav\\Desktop\\tkinterpj\\Effective-medical-assistant\\EffectiveMedicalAssistant\\backend\\aimodels\\heart.pkl";
 const kidneyModel = "C:\\Users\\Gautam Kumar Yadav\\Desktop\\tkinterpj\\Effective-medical-assistant\\EffectiveMedicalAssistant\\backend\\aimodels\\kidney.pkl";
 const liverModel = "C:\\Users\\Gautam Kumar Yadav\\Desktop\\tkinterpj\\Effective-medical-assistant\\EffectiveMedicalAssistant\\backend\\aimodels\\kidney.pkl";
 const breastCancerModel = "C:\\Users\\Gautam Kumar Yadav\\Desktop\\tkinterpj\\Effective-medical-assistant\\EffectiveMedicalAssistant\\backend\\aimodels\\breast_cancer.pkl";
-const pythonScriptPathForDiabetes = "E:\Projects\EMA\Effective-medical-assistant\backend\predict.py";
+const pythonScriptPathForDiabetes = "E:\\Projects\\EMA\\Effective-medical-assistant\\backend\\predict.py";
 const pythonScriptPathForHeart = "C:\\Users\\Gautam Kumar Yadav\\Desktop\\tkinterpj\\Effective-medical-assistant\\EffectiveMedicalAssistant\\backend\\heart.py";
 const pythonScriptPathForKidney = "C:\\Users\\Gautam Kumar Yadav\\Desktop\\tkinterpj\\Effective-medical-assistant\\EffectiveMedicalAssistant\\backend\\kidney.py";
 const pythonScriptPathForLiver = "C:\\Users\\Gautam Kumar Yadav\\Desktop\\tkinterpj\\Effective-medical-assistant\\EffectiveMedicalAssistant\\backend\\kidney.py";
@@ -26,6 +26,7 @@ router.post("/diabetes", (req, res) => {
       "--loads",
       diabetesModel,
       JSON.stringify(data),
+      "diabetes",
     ]);
     let prediction = "";
     let responseSent = false; // Flag to track if response has been sent
